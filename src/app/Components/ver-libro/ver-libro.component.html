@@ -1,0 +1,20 @@
+<div class="title">Ver Libros</div>
+
+<app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="libro.length != 0" class="container">
+  <mat-card class="card">
+    <mat-card-title>{{ libro[0].nom_libro }} </mat-card-title>
+    <mat-card-content>
+      <p><strong>Autor: </strong>{{ libro[0].autor_libro }}</p>
+      <p><strong>Categoria: </strong>{{ libro[0].categoria }}</p>
+      <p><strong>Fecha: </strong>{{ libro[0].fecha_lanzamiento }}</p>
+      <p>
+        <strong>Estado: </strong
+        >{{ libro[0].estado == 1 ? "Activo" : "Inactivo" }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button routerLink="/lista" mat-raised-button>Volver</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
